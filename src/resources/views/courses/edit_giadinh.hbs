@@ -1,0 +1,64 @@
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    {{> header_admin}}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <div class="mt-4">
+                <h1>Gói cước gia đình</h1>
+                <div class="mt-4">
+                  <a class="btn btn-primary" href="/goicuocgiadinh" role="button">Quay lại</a>
+                  <h1 class="mt-3">Thêm gói cước</h1>
+                  
+                  <form action="/{{edit_giadinh._id}}/update_goicuocgiadinh?_method=PUT" method="POST" class="mt-4">
+                    <div class="form-group">
+                      <label for="name_gcgd">Tên gói cước</label>
+                      <input type="text" class="form-control"  placeholder="Tên gói cước" value="{{edit_giadinh.name_gcgd}}" name="name_gcgd"
+                        id="name_gcgd">
+                    </div>
+                    <div class="form-group">
+                      <label for="data_gd">Băng thông</label>
+                      <input type="text" class="form-control" placeholder="Băng thông" value="{{edit_giadinh.data_gd}}" name="data_gd"
+                        id="data_gd" >
+                    </div>
+                    <div class="form-group">
+                      <label for="promotions_gd">Khuyến mãi</label>
+                      <textarea class="form-control" rows="3" placeholder="Chương trình khuyến mãi"  name="promotions_gd"
+                        id="promotions_gd">{{edit_giadinh.promotions_gd}}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="price_gd">Giá gói cước</label>
+                      <input type="text" class="form-control" placeholder="Giá gói cước" value="{{edit_giadinh.price_gd}}" name="price_gd"
+                        id="price_gd">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sửa gói cước</button>
+                  </form>
+                </div>
+              </div>
+            </div><!-- /.col -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    {{> footer_admin}}
+
+
+  </div>
+  <!-- ./wrapper -->
+
+
+</div>

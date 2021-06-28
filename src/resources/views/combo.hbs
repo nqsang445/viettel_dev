@@ -1,0 +1,121 @@
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    {{> header_admin}}
+
+      <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-12">
+              <div class="mt-4">
+                <h1>Combo Gói cước</h1>
+                <div class="mt-4">
+                  <a class="btn btn-primary" href="create_combo" role="button">Thêm Combo</a>
+                  <table class="table mt-4" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên gói cước</th>
+                        <th scope="col">Băng thông</th>
+                        <th scope="col">Phạm vi áp dụng</th>
+                        <th scope="col">Giá gói cước</th>
+                        <th scope="col">Khuyến mãi</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+
+                      </tr>
+                    </thead>
+                    {{#each shows_combo}}
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{sum @index 1}}</th>
+                        <td>{{this.name_combo}}</td>
+                        <td>{{this.data_combo}}</td>
+                        <td>{{this.range}}</td>
+                        <td>{{this.price_combo}}</td>
+                        <td>{{this.promotions_combo}}</td>
+                        <td><a class="btn btn-danger" href="/{{this._id}}/edit_combo?_method=PUT" role="button">Sửa</a></td>
+                        <td><a class="btn btn-danger" href="" role="button" data-toggle="modal" data-id="{{this._id}}"
+                            data-target="#delete_combo">Xóa</a></td>
+                      </tr>
+                    </tbody>
+
+                    {{/each }}
+                  </table>
+                </div>
+              </div>
+            </div><!-- /.col -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    
+    
+    {{> footer_admin}}
+
+    
+  </div>
+  <!-- ./wrapper -->
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="delete_combo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" style="margin-top: 10%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa gói cước?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Hành động này không thể khôi phục, bạn chắc chắn muốn xóa?
+      </div>
+      <div class="modal-footer">
+
+        <button id="btn-delete-combo" type="button" class="btn btn-danger">Xóa bỏ</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- delete form --}}
+  <form name="delete-form-combo" method="POST"></form>
+{{!-- modal chức năng xóa --}}
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var Comboid;
+    var deleteForm = document.forms['delete-form-combo'];
+    var btnDeleteCB = document.getElementById('btn-delete-combo');
+
+    $('#delete_combo').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      Comboid = button.data('id');
+     
+    });
+      
+      
+      btnDeleteCB.onclick = function(){
+        deleteForm.action = '/' + Comboid + '/delete_combo?_method=DELETE'; 
+        deleteForm.submit();
+      }
+
+  });
+
+</script>
+

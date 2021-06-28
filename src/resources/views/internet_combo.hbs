@@ -1,0 +1,108 @@
+<div class="header">{{> header}}</div>
+<br>
+<div class="banner">{{> banner}}</div>
+<br>
+
+
+
+<div class="container">
+    {{!-- INTERNET --}}
+    <div class="internet-home" style="color: red;">
+        <div class="internet-home-top">
+            <nav class="navbar navbar-expand-sm bg-white navbar-light border-radius-home">
+                <ul class="navbar-nav " style="margin: 0 auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link" href="internet">CÁC GÓI COMBO INTERNET</h>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <!-- The Modal -->
+    <div class="modal a9" id="combos">
+        <div class="modal-dialog " style="margin-top:5%;">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Đắng ký gói cước</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body ">
+                    <form action="/store" method="POST">
+                        <div class="form-group">
+                            <label for="tenkhachhang">Tên khách hàng</label>
+                            <input type="text" class="form-control" placeholder="Nhập tên khách hàng"
+                                name="tenkhachhang" id="tenkhachhang">
+                        </div>
+                        <div class="form-group">
+                            <label for="sdt">Số điện thoại</label>
+                            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="sdt"
+                                id="sdt">
+                        </div>
+                        <div class="form-group">
+                            <label for="diachi">Địa chỉ</label>
+                            <input type="text" class="form-control" placeholder="Nhập địa chỉ" name="diachi"
+                                id="diachi">
+                        </div>
+                        <div class="form-group">
+                            {{!-- <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Remember me
+                            </label> --}}
+                            <label for="goicuoc">Chọn gói cước</label>
+                            <select class="form-control" name="goicuoc" id="goicuoc">
+                                {{#each icombo}}
+                                <option value='{{this.name_combo}}'>{{this.name_combo}}</option>
+                                {{/each }}
+
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="handleSubmit()">Đăng ký</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="internet-home-bottom "><br>
+        <div class="inner">
+            <div class="row">
+                {{#each icombo}}
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #FF9900;">{{this.name_combo}}</h5>
+                            <br>
+                            <hr>
+                            <p style="color: #33FFFF;">Băng thông</p>
+                            <p style="color: red;">{{this.data_combo}}</p>
+                            <p style="color: red;">Phạm vi áp dụng</p>
+                            <p>{{this.range}}</p>
+                            <p href="#" data-toggle="tooltip" data-placement="top" title="{{this.promotions_combo}}"
+                                style="color: #33FFFF;">Chi tiết khuyến mãi</p>
+                            <p class="price">{{this.price_combo}}(VNĐ)/1 Tháng</p>
+
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#combos">
+                                Đăng ký
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            
+            <script>
+                //khai bao number
+
+
+            </script>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">{{> footer}}</div>

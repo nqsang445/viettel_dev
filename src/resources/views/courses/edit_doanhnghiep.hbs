@@ -1,0 +1,73 @@
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    {{> header_admin}}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <div class="mt-4">
+                <h1>Gói cước doanh nghiệp</h1>
+                <div class="mt-4">
+                  <a class="btn btn-primary" href="/goicuocdoanhnghiep" role="button">Quay lại</a>
+                  <h1 class="mt-3">Sửa gói cước</h1>
+
+                  <form action="/{{edit_doanhnghiep._id}}/update_goicuocdoanhnghiep?_method=PUT" method="POST" class="mt-4">
+                    <div class="form-group">
+                      <label for="name_goicuoc">Tên gói cước</label>
+                      <input type="text" class="form-control"  placeholder="Tên gói cước" value="{{edit_doanhnghiep.name_goicuoc}}" name="name_goicuoc"
+
+                        id="name_goicuoc">
+                    </div>
+                    <div class="form-group">
+                      <label for="data_tn">Băng thông trong nước</label>
+                      <input type="text" class="form-control" placeholder="Băng thông trong nước" value="{{edit_doanhnghiep.data_tn}}" name="data_tn"
+
+                        id="data_tn" >
+                    </div>
+                    <div class="form-group">
+                      <label for="data_qt">Băng thông quốc tế</label>
+                      <input type="text" class="form-control" placeholder="Băng thông quốc tế" value="{{edit_doanhnghiep.data_qt}}" name="data_qt"
+
+                        id="data_qt" >
+                    </div>
+                    <div class="form-group">
+                      <label for="promotions">Khuyến mãi</label>
+                      <textarea class="form-control" id="promotions" rows="3" placeholder="Chương trình khuyến mãi" name="promotions"
+                        id="promotions">{{edit_doanhnghiep.promotions}}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="price">Giá gói cước</label>
+                      <input type="text" class="form-control" placeholder="Giá gói cước" value="{{edit_doanhnghiep.price  }}" name="price"
+
+                        id="price">
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Sửa gói cước</button>
+                  </form>
+                </div>
+              </div>
+            </div><!-- /.col -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    {{> footer_admin}}
+
+
+  </div>
+  <!-- ./wrapper -->
+
+
+</div>

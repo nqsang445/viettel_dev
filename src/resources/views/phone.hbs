@@ -1,0 +1,67 @@
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    {{> header_admin}}
+
+      <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-12">
+              <div class="mt-4">
+                <h1>Gói cước gia đình</h1>
+                <div class="mt-4">
+                  <table class="table mt-4" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        
+                        <th scope="col">Số điện thoại</th>
+                        
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+
+                      </tr>
+                    </thead>
+                    {{#each shows_phone}}
+                    <tbody>
+                      <tr>
+                        
+                        <td>{{this.sdt}}</td>
+                        
+                        <td><a class="btn btn-danger" href="/{{this._id}}/edit_phone?_method=PUT" role="button">Sửa</a></td>
+                        
+                      </tr>
+                    </tbody>
+
+                    {{/each }}
+                  </table>
+                  
+                </div>
+              </div>
+            </div><!-- /.col -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    
+    
+    {{> footer_admin}}
+
+    
+  </div>
+  <!-- ./wrapper -->
+
+
+</div>
+
+
+

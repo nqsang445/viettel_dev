@@ -1,0 +1,51 @@
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    {{> header_admin}}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <div class="mt-4">
+                <h1>Gói cước doanh nghiệp</h1>
+                <div class="mt-4">
+                  <a class="btn btn-primary" href="/goicuocdoanhnghiep" role="button">Quay lại</a>
+                  <h1 class="mt-3">Sửa gói cước</h1>
+
+                  <form action="/{{edit_phone._id}}/update_phone?_method=PUT" method="POST" class="mt-4">
+                    <div class="form-group">
+                      <label for="sdt">Số điện thoại</label>
+                      <input type="text" class="form-control"  placeholder="Tên gói cước" value="{{edit_phone.sdt}}" name="sdt"
+
+                        id="sdt">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" >Lưu lại</button>
+                  </form>
+                </div>
+              </div>
+            </div><!-- /.col -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    {{> footer_admin}}
+
+
+  </div>
+  <!-- ./wrapper -->
+
+
+</div>

@@ -1,0 +1,122 @@
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    {{> header_admin}}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-12">
+              <div class="mt-4">
+                <h1>Gói cước doanh nghiệp</h1>
+                <div class="mt-4">
+                  <a class="btn btn-primary" href="create_doanhnghiep" role="button">Thêm gói cước</a>
+                  <table class="table mt-4" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên gói cước</th>
+                        <th scope="col">Băng thông trong nước</th>
+                        <th scope="col">Băng thông quốc tế</th>
+                        <th scope="col">Khuyến mãi</th>
+                        <th scope="col">Giá gói cước</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+
+                      </tr>
+                    </thead>
+                    {{#each shows_dn}}
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{sum @index 1}}</th>
+                        <td>{{this.name_goicuoc}}</td>
+                        <td>{{this.data_tn}}</td>
+                        <td>{{this.data_qt}}</td>
+                        <td>{{this.promotions}}</td>
+                        <td>{{this.price}}</td>
+                        <td><a class="btn btn-danger" href="/{{this._id}}/edit_doanhnghiep?_method=PUT" role="button">Sửa</a></td>
+                        <td><a class="btn btn-danger" href="" role="button" data-toggle="modal" data-id="{{this._id}}"
+                            data-target="#delete_goicuocdoanhnghiep">Xóa</a></td>
+                      </tr>
+                    </tbody>
+
+                    {{/each }}
+                  </table>
+                </div>
+              </div>
+            </div><!-- /.col -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    {{> footer_admin}}
+
+
+  </div>
+  <!-- ./wrapper -->
+
+
+</div>
+
+{{!-- modal chức năng xóa --}}
+
+<!-- Modal -->
+<div class="modal fade" id="delete_goicuocdoanhnghiep" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" style="margin-top: 10%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa gói cước?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Hành động này không thể khôi phục, bạn chắc chắn muốn xóa?
+      </div>
+      <div class="modal-footer">
+
+        <button id="btn-delete-goicuocdoanhnghiep" type="button" class="btn btn-danger">Xóa bỏ</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- delete form --}}
+  <form name="delete-form-doanhnghiep" method="POST"></form>
+{{!-- modal chức năng xóa --}}
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var DNid;
+    var deleteForm = document.forms['delete-form-doanhnghiep'];
+    var btnDeleteDN = document.getElementById('btn-delete-goicuocdoanhnghiep');
+
+    $('#delete_goicuocdoanhnghiep').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      DNid = button.data('id');
+     
+    });
+      
+      
+      btnDeleteDN.onclick = function(){
+        deleteForm.action = '/' + DNid + '/delete_goicuocdoanhnghiep?_method=DELETE'; 
+        deleteForm.submit();
+      }
+
+  });
+
+</script>

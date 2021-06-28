@@ -1,0 +1,117 @@
+.img-index {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
+.banner {
+  position: relative;
+  width: 85%;
+  margin: 0 auto; }
+
+.imgbanner {
+  width: 100%;
+  border-radius: 10px; }
+.menu{
+  height: auto;
+}
+
+.carousel-inner-banner-height {
+  height: auto; }
+
+#carousel-inner-banner img {
+  width: 100%;
+  height: 100%; }
+
+#custCarousel-banner {
+  position: static;
+  margin-top: 20px; }
+
+#custCarousel-banner li {
+  width: 100px; }
+
+#custCarousel-banner li img {
+  display: block;
+  opacity: 0.5; }
+
+#custCarousel-banner li.active img {
+  opacity: 0.8; }
+
+#custCarousel-banner li:hover img {
+  opacity: 0.75; }
+
+#carousel-inner-banner .carousel-item img {
+  width: 80%; }
+
+.footer-color {
+  color: black; }
+
+.footer-icon {
+  width: 20px;
+  height: 20px; }
+
+.img-boder-radius {
+  border-radius: 10%; }
+
+.border-radius-10 {
+  border-radius: 10px 10px 0 0; }
+
+.internet-home {
+  position: relative;
+  background-color: red;
+  height: auto;
+  width: auto;
+  border-radius: 10px 10px 0 0; }
+
+.internet-home-top {
+  position: relative;
+  
+  height: 5%;
+  width: auto;
+  border-radius: 10px 10px 0 0; }
+
+.internet-home-bottom {
+  position: relative;
+  height: auto;
+  width: auto; }
+
+.border-radius-home {
+  border-radius: 10px 10px 0 0; }
+
+.border-radius-1 {
+  border-radius: 20px; }
+
+.border-radius-2 {
+  border-radius: 20px 20px 0 0; }
+.inner{
+  width: 95%;
+  margin: 0 auto;
+
+  
+}
+.item{background-color: white; width: 31%; display: inline-block; text-align: center;margin: 0 auto;margin-left: 2%; margin-top: 3%;border-radius:10px 10px 0 0;}
+  /* slide item */
+ 
+  /* end slide item */
+
+
+  /* css page Admin */
+
+
+
+.login_admin{
+  width: 30%;
+  
+  margin: 0 auto;
+  padding-top: 10%;
+
+}
+.login_admin_1{
+  margin-left: 37%;
+}
+  /* end css page Admin */
+
+.test1{
+    width: 24% !important;
+    display: inline-block;
+}

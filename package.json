@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://git.heroku.com/lap-dat-wifi-viettel-cantho.git"
+    "url": "git+https://github.com/nqsang445/viettel_dev.git"
   },
   "keywords": [
     "nqsang",
@@ -19,9 +19,9 @@
   "author": "nqsang",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/nqsang445/nodejs_nln/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/nqsang445/nodejs_nln#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",

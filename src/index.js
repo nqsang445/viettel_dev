@@ -47,8 +47,9 @@ app.use(methodOverride('_method'));
 
 app.use(express.json());
 app.use(express.urlencoded());
-route(app);
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+route(app)
+const PORT =  process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
 })
 

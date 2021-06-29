@@ -1,7 +1,11 @@
 <div class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     {{> header_admin}}
-
+    <script>
+      // setter
+      localStorage.setItem('jwt','{{token}}');
+      localStorage.setItem('admin','{{adminid}}');
+</script>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->

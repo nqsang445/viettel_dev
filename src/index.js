@@ -1,5 +1,5 @@
 const path = require('path');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const session = require('express-session');
 const express = require('express');
 const morgan = require('morgan');
@@ -13,7 +13,8 @@ const route = require('./routes');
 
 const db= require('./config/db')
 
-
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
@@ -48,8 +49,8 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded());
 route(app);
-const PORT =  process.env.PORT || 3000; // neu dua len heroku
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+// const PORT =  process.env.PORT || 3000; // neu dua len heroku
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 })
 

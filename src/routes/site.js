@@ -3,14 +3,19 @@ var router = express.Router();
 const jwt = require('jsonwebtoken');
 const siteControllers = require('../app/controllers/SiteControllers');
 const userControllers = require('../app/controllers/UserControllers');
+const verifyToken = require('../app/midleware/login');
 
 // userControllers
 
 
 ///LOGIN
-router.get('/admin', userControllers.admin);
-router.post('/admin', userControllers.login);
-router.get('/page_admin_viettel', userControllers.page_admin_viettel);
+router.get('/dangnhap', userControllers.dangnhap);
+router.post('/login', userControllers.login);
+router.get('/admin',userControllers.admin);
+
+
+
+
 // khuyen mai
 router.get('/promotions', userControllers.promotions);
 router.get('/promotion', userControllers.promotion);

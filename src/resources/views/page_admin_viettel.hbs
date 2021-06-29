@@ -1,7 +1,6 @@
-
-<div class="login_admin">
-    <h1 style="text-align: center;color: #DDDDDD    ;">Đăng nhập</h1>
-    <form action="/admin" method="POST">
+<div class="login_admin" >
+    <h1 style="text-align: center;color: black;">Đăng nhập</h1>
+    <form action="/login" method="POST">
         <div class="form-group">
             <label for="user" style="color: #FF0000;">Tên tải khoản</label>
             <input type="text" class="form-control" placeholder="Nhập tên tài khoản" name="user" id="user">
@@ -10,7 +9,7 @@
             <label for="password" style="color: #FF0000;">Mật khẩu</label>
             <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password" id="password">
         </div>
-        <button type="submit" class="btn btn-primary login_admin_1" >Đăng nhập</button>
+        <button type="submit" class="btn btn-primary login_admin_1">Đăng nhập</button>
     </form>
     <p style="color: #FF0000;text-align: center;">{{err}}</p>
 

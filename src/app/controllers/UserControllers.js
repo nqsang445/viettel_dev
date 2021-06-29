@@ -6,11 +6,40 @@ const userModel = require('../models/userModel');
 const Promotion = require('../models/promotions');
 const Phones = require('../models/phone');
 const jwt = require('jsonwebtoken');
+const verifyToken = require('../midleware/login');
 const { multipleMongooseToObject, mongooseToObject } = require('../../until/mongoose');
 
 
 
 class UserControllers {
+    // page_admin_viettel
+    dangnhap(req, res, next) {
+        res.render('page_admin_viettel');
+    }
+    // login
+    async login(req, res, next) {
+        const userLogin = req.body.user;
+        const passwordLogin = req.body.password;
+        const err = 'Tài khoản hoặc mật khẩu không chính xác';
+        userModel.findOne({
+            user: userLogin,
+            password: passwordLogin
+        })
+            .then(data => {
+                if (data) {
+                    res.redirect('admin')
+                    
+                } else {
+                    res.render('page_admin_viettel',{
+                        err: err
+                    })
+                }
+            })
+            .catch(err => {
+                res.status(500), json('ERROR server')
+            });
+
+    }
     // [GET] /admin
     admin(req, res, next) {
         Create.find({})
@@ -25,35 +54,8 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    // login
-    async login(req, res, next) {
-        const userLogin = req.body.user;
-        const passwordLogin = req.body.password;
-        const err = 'Tài khoản hoặc mật khẩu không chính xác';
-        userModel.findOne({
-            user: userLogin,
-            password: passwordLogin
-        })
-            .then(data => {
-                if (data) {
-                    res.redirect('admin');
-                    
-
-                } else {
-                    res.render('page_admin_viettel',{
-                        err: err
-                    })
-                }
-            })
-            .catch(err => {
-                res.status(500), json('ERROR server')
-            });
-
-    }
-    // page_admin_viettel
-    page_admin_viettel(req, res, next) {
-        res.render('page_admin_viettel');
-    }
+    
+    
     // xử lý trang gói cước doanh nghiệp
     // [GET] /goicuocdoanhnghiep
     goicuocdoanhnghiep(req, res, next) {

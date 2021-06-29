@@ -1,108 +1,168 @@
-<div class="header">{{> header}}</div>
-<br>
-<div class="banner">{{> banner}}</div>
-<br>
 
-
-
-<div class="container">
-    {{!-- INTERNET --}}
-    <div class="internet-home" style="color: red;">
-        <div class="internet-home-top">
-            <nav class="navbar navbar-expand-sm bg-white navbar-light border-radius-home">
-                <ul class="navbar-nav " style="margin: 0 auto;">
-                    <li class="nav-item active">
-                        <h5 class="nav-link" href="internet">CÁC GÓI CƯỚC GIA ĐÌNH</h>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-    </div>
-    <!-- The Modal -->
-    <div class="modal a9" id="family">
-        <div class="modal-dialog " style="margin-top:5%;">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Đắng ký gói cước</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+{{!-- ======= --}}
+<div class="container backgroud-container">
+    {{> header}}
+    <div class="container backgroud-row">
+        <div class="row">
+            <div class="col-sm-8 backgroud-1">
+                <div>
+                    <h1 style="text-align: center;" class="test">INTERNET CÁP QUANG VIETTEL CẦN THƠ</h1>
                 </div>
+                <br>
+                
+                <div>
+                    <p style="text-align: center;font-style: italic;">CÁC GÓI CƯỚC GIA ĐÌNH</p>
+                </div>
+                <hr>
+                <div class="container">
 
-                <!-- Modal body -->
-                <div class="modal-body ">
-                    <form action="/store" method="POST">
-                        <div class="form-group">
-                            <label for="tenkhachhang">Tên khách hàng</label>
-                            <input type="text" class="form-control" placeholder="Nhập tên khách hàng"
-                                name="tenkhachhang" id="tenkhachhang">
+                    <!-- The Modal -->
+                    <div class="modal a9" id="family">
+                        <div class="modal-dialog " style="margin-top:5%;">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Đắng ký gói cước</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body ">
+                                    <form action="/store" method="POST">
+                                        <div class="form-group">
+                                            <label for="tenkhachhang">Tên khách hàng</label>
+                                            <input type="text" class="form-control" placeholder="Nhập tên khách hàng"
+                                                name="tenkhachhang" id="tenkhachhang">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sdt">Số điện thoại</label>
+                                            <input type="text" class="form-control" placeholder="Nhập số điện thoại"
+                                                name="sdt" id="sdt">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="diachi">Địa chỉ</label>
+                                            <input type="text" class="form-control" placeholder="Nhập địa chỉ"
+                                                name="diachi" id="diachi">
+                                        </div>
+                                        <div class="form-group">
+                                            {{!-- <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox"> Remember me
+                                            </label> --}}
+                                            <label for="goicuoc">Chọn gói cước</label>
+                                            <select class="form-control" name="goicuoc" id="goicuoc">
+                                                {{#each ifamily}}
+                                                <option value='{{this.name_gcgd}}'>{{this.name_gcgd}}</option>
+                                                {{/each }}
+
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" onclick="handleSubmit()">Đăng
+                                            ký</button>
+                                    </form>
+                                </div>
+
+
+
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="sdt">Số điện thoại</label>
-                            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="sdt"
-                                id="sdt">
-                        </div>
-                        <div class="form-group">
-                            <label for="diachi">Địa chỉ</label>
-                            <input type="text" class="form-control" placeholder="Nhập địa chỉ" name="diachi"
-                                id="diachi">
-                        </div>
-                        <div class="form-group">
-                            {{!-- <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Remember me
-                            </label> --}}
-                            <label for="goicuoc">Chọn gói cước</label>
-                            <select class="form-control" name="goicuoc" id="goicuoc">
+                    </div>
+                    <div class="internet-home-bottom "><br>
+                        <div class="inner">
+                            <div class="row">
                                 {{#each ifamily}}
-                                <option value='{{this.name_gcgd}}'>{{this.name_gcgd}}</option>
-                                {{/each }}
+                                <div class="col-sm-4">
+                                    <div class="card bg-info">
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="color: #00AA00;">{{this.name_gcgd}}</h5>
+                                            <br>
+                                            <hr>
+                                            <p style="color: #33FFFF;">Băng thông</p>
+                                            <p style="color: red;">{{this.data_gd}}</p>
 
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" onclick="handleSubmit()">Đăng ký</button>
-                    </form>
-                </div>
+                                            <p href="#" data-toggle="tooltip" data-placement="top"
+                                                title="{{this.promotions_gd}}" style="color: #33FFFF;">Chi tiết khuyến
+                                                mãi</p>
+                                            <p class="price">{{this.price_gd}}(VNĐ)/1 Tháng</p>
 
-            </div>
-        </div>
-    </div>
-    <div class="internet-home-bottom "><br>
-        <div class="inner">
-            <div class="row">
-                {{#each ifamily}}
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #00AA00;">{{this.name_gcgd}}</h5>
-                            <br>
-                            <hr>
-                            <p style="color: #33FFFF;">Băng thông</p>
-                            <p style="color: red;">{{this.data_gd}}</p>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#family">
+                                                Đăng ký
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
 
-                            <p href="#" data-toggle="tooltip" data-placement="top" title="{{this.promotions_gd}}"
-                                style="color: #33FFFF;">Chi tiết khuyến mãi</p>
-                            <p class="price">{{this.price_gd}}(VNĐ)/1 Tháng</p>
 
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#family">
-                                Đăng ký
-                            </button>
+                        </div><br>
+                        <p class="nav-link" style="color: red;text-align: center;">Giá trên đã bao gồm 10% thuế VAT</p>
+                        {{!-- <a class="nav-link" href="internet_giadinh" style="color: red;text-align: center;">Xem tất
+                            cả</a> --}}
+                        <br>
+                        <div class="container">
+
                         </div>
                     </div>
                 </div>
-                {{/each}}
+                
+
             </div>
-            
-            <script>
-                //khai bao number
-
-
-            </script>
+            {{!-- col-8 --}}
+            <div class="col-sm-4 backgroud-2">
+                <div class="titletintuc "><h1 class="test">TIN TỨC SỰ KIỆN</h1></div><br><br><br>
+                <div class="tintuc">
+                    <img src="img/lienhe.png" alt="" style="width:100%;border-radius: 10px 10px 0 0;">
+                    <p style="text-align: center;color:red;">LIÊN HỆ TƯ VẤN / LẮP ĐẶT</p>
+                    <p style="text-align: center;">034.561.7864</p>
+                    <p style="text-align: center;color:green;">Báo hỏng / Sự cố</p>
+                    <p style="text-align: center;">1800 8090</p>
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">SMART MOTOR VIETTEL</p>
+                    <img src="img/chong-trom-xe-may-viettel-remote-w2.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">THIẾT BỊ GIÁM SÁT HÀNH TRÌNH</p>
+                    <img src="img/Bảng-giá-lắp-đặt-thiết-bị-giám-sát-hành-viettel-1.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">KHÓA CHỐNG TRỘM XE MÁY</p>
+                    <img src="img/chong-trom-xe-may-remote.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">CHỮ KÝ SỐ VIETTEL</p>
+                    <img src="img/chu-ky-so-viettel-ca.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">HÓA ĐƠN ĐIỆN TỬ VIETTEL</p>
+                    <img src="img/hoa-don-dien-tu.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">LẮP ĐẶT CÁP QUANG VIETTEL</p>
+                    <img src="img/lap-dat-internet-quan-9-10-1.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                <div class="tintuc">
+                    <p style="text-align: center;color:red;">ĐỊNH VỊ Ô TÔ VIETTEL</p>
+                    <img src="img/dinh-vi-o-to.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
+                    
+                </div><br>
+                
+                
+            </div>
         </div>
 
+    
     </div>
+    <div class="footer-relative">{{> footer}}</div>
+    
 
+    
 </div>
-
-<div class="footer">{{> footer}}</div>
-

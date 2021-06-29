@@ -172,11 +172,21 @@
   100% { color: #F8CD0A;  } 
 } 
 .test {
-        background:#3d3d3d;
+        background-color: black;
         font-size:24px;
         font-weight:bold;
-  -webkit-animation: my 700ms infinite;
-  -moz-animation: my 700ms infinite; 
-  -o-animation: my 700ms infinite; 
-  animation: my 700ms infinite;
+  -webkit-animation: my 1200ms infinite;
+  -moz-animation: my 1200ms infinite; 
+  -o-animation: my 1200ms infinite; 
+  animation: my 1200ms infinite;
+}
+.test-2 {
+  text-align: center;
+  background-color: red;
+  font-size:24px;
+  font-weight:bold;
+-webkit-animation: my 1200ms infinite;
+-moz-animation: my 1200ms infinite; 
+-o-animation: my 1200ms infinite; 
+animation: my 1200ms infinite;
 }

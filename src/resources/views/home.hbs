@@ -289,8 +289,18 @@
                         <br>
                     </div>
                 </div>
-
+                <div class="container">
+                    <h1 class="test-2">Khuyến mãi</h1>
+                    <p style="color: #00AA00;">Khuyến mãi thêm khi quý khách đóng cước trước:</p>
+                     {{#each promotions}}
+                    <ul ><p style="color: #FF9900;">Khi khách hàng đóng cước trước {{this.month}}</p>
+                        
+                        <li style="margin-left:5%;">{{this.infor}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
             </div>
+            {{!-- =========tin tuc======== --}}
             {{!-- col-8 --}}
             <div class="col-sm-4 backgroud-2">
                 <div class="titletintuc "><h1 class="test">TIN TỨC SỰ KIỆN</h1></div><br><br><br>

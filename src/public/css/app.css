@@ -195,3 +195,33 @@ animation: my 1200ms infinite;
 .card-title{
   margin-left: 10%;
 }
+/* ======= */
+.bg-admin{
+  position: relative;
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+}
+
+.bg-right{
+  position: relative;
+  
+  height: 1200px;
+}
+.bg-left{
+  position: relative;
+  
+  height: auto;
+}
+.ad1{
+  text-align: center;
+
+}
+.ad2{
+  list-style: none;
+
+}
+.ad3{
+  width: 100%;
+  height: 1200px;
+}

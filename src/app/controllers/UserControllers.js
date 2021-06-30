@@ -8,16 +8,21 @@ const Phones = require('../models/phone');
 const jwt = require('jsonwebtoken');
 const verifyToken = require('../midleware/login');
 const { multipleMongooseToObject, mongooseToObject } = require('../../until/mongoose');
+const { updateOne } = require('../models/Internet');
 
 
 
 class UserControllers {
+    //admin
+    
     // page_admin_viettel
     dangnhap(req, res, next) {
         res.render('page_admin_viettel');
     }
-    // login
-    async login(req, res, next) {
+
+    // [GET] /admin
+    login(req, res, next) {
+
         const userLogin = req.body.user;
         const passwordLogin = req.body.password;
         const err = 'Tài khoản hoặc mật khẩu không chính xác';
@@ -27,10 +32,12 @@ class UserControllers {
         })
             .then(data => {
                 if (data) {
-                    res.redirect('admin')
-                    
+                    var token = jwt.sign({ _id: data._id }, 'mk');
+                    return res.render('login', {
+                        token: token
+                    })
                 } else {
-                    res.render('page_admin_viettel',{
+                    res.render('dangnhap', {
                         err: err
                     })
                 }
@@ -39,14 +46,14 @@ class UserControllers {
                 res.status(500), json('ERROR server')
             });
 
+
     }
-    // [GET] /admin
-    admin(req, res, next) {
+    danhsach_dk(req, res, next) {
         Create.find({})
             .then(shows_information => {
-                res.render('admin', {
+                res.render('danhsach_dk', {
                     shows_information: multipleMongooseToObject(shows_information),
-                    layouts: false
+
 
                 });
             })
@@ -54,8 +61,10 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    
-    
+
+
+
+
     // xử lý trang gói cước doanh nghiệp
     // [GET] /goicuocdoanhnghiep
     goicuocdoanhnghiep(req, res, next) {
@@ -257,9 +266,9 @@ class UserControllers {
     }
 
     // khuyen mai
-    
-    promotion(req,res,next){
-       
+
+    promotion(req, res, next) {
+
         Promotion.find({})
             .then(shows_promotions => {
                 res.render('promotion', {
@@ -271,10 +280,10 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    promotions(req,res,next){
+    promotions(req, res, next) {
         res.render('courses/promotions')
     }
-    store_promotions(req,res,next){
+    store_promotions(req, res, next) {
         const add_promotions = new Promotion(req.body);
         add_promotions.save({})
             .then(temp => {
@@ -284,8 +293,8 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    
-    edit_promotions(req,res,next){
+
+    edit_promotions(req, res, next) {
         Promotion.findById(req.params.id)
             .then(edit_promotion => res.render('courses/edit_promotion', {
                 edit_promotion: mongooseToObject(edit_promotion)
@@ -294,14 +303,14 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    update_promotions(req,res,next){
+    update_promotions(req, res, next) {
         Promotion.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/promotion'))
             .catch(err => {
                 res.status(500).json('Lỗi Server')
             });
     }
-    delete_promotions(req,res,next){
+    delete_promotions(req, res, next) {
         Promotion.deleteOne({ _id: req.params.id })
             .then(() => res.redirect('back'))
             .catch(err => {
@@ -309,8 +318,8 @@ class UserControllers {
             });
     }
     // phone
-    phone(req,res,next){
-        
+    phone(req, res, next) {
+
         Phones.find({})
             .then(shows_phone => {
                 res.render('phone', {
@@ -321,7 +330,7 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    edit_phone(req,res,next){
+    edit_phone(req, res, next) {
         Phones.findById(req.params.id)
             .then(edit_phone => res.render('courses/edit_phone', {
                 edit_phone: mongooseToObject(edit_phone)
@@ -330,14 +339,38 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
-    update_phone(req,res,next){
+    update_phone(req, res, next) {
         Phones.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/phone'))
             .catch(err => {
                 res.status(500).json('Lỗi Server')
             });
     }
-    
+    password_admin(req, res, next) {
+        res.render('courses/password_admin');
+    }
+
+    async update_password(req, res, next) {
+        try {
+            var passold = req.body.password;
+            var passnew = req.body.passwordnew;
+
+            var findData = await userModel.findOne({
+                password: passold
+            })
+        
+            if (findData.password === passold) {
+                findData.password = passnew;
+               await userModel.updateOne({ _id: findData._id }, { $set: findData })
+               res.send('thanh cong');
+            } else {
+                res.status(404).json('that bai')
+            }
+        } catch (error) {
+            res.send(error);
+        }
+
+    }
 }
 
 module.exports = new UserControllers;

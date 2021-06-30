@@ -14,10 +14,11 @@
     <div class="col-sm-3 ">
       {{#if token}}
       <h4 style="margin-top:5%;">XIN CHÀO ADMIN!</h4>
-      {{else}}
+      
 
       {{/if }}
-      <a href="/login" onclick="handleLogout()">Đăng xuất</a>
+      <a href="/login" onclick="handleLogout()"><input type="submit" value="Đăng xuất" style="background-color: #EE0033;"></a>
+      <a href="/password_admin" target="ifarm_admin"><input type="submit" value="Đổi mật khẩu" style="background-color: #EE0033;"></a>
     </div>
   </div>
 <br><hr>
@@ -30,7 +31,6 @@
         <li><a href="/goicuocgiadinh" target="ifarm_admin">Gói cước gia đình</a></li><br>
         <li><a href="/combo" target="ifarm_admin">COMBO gói cước</a></li><br>
         <li><a href="/promotion" target="ifarm_admin">Khuyến mãi</a></li>
-        
       </ul>
     </div>
     <div class="col-sm-10 bg-left">

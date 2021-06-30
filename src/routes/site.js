@@ -7,15 +7,15 @@ const verifyToken = require('../app/midleware/login');
 
 // userControllers
 
-
+router.get('/danhsach_dk',userControllers.danhsach_dk);
 ///LOGIN
-router.get('/dangnhap', userControllers.dangnhap);
+router.get('/login', userControllers.dangnhap);
 router.post('/login', userControllers.login);
-router.get('/admin',userControllers.admin);
 
-
-
-
+///update_password
+router.put('/update_password', userControllers.update_password);
+// /password_admin
+router.get('/password_admin', userControllers.password_admin);
 // khuyen mai
 router.get('/promotions', userControllers.promotions);
 router.get('/promotion', userControllers.promotion);

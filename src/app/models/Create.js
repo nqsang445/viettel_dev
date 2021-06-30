@@ -5,7 +5,8 @@ const Create = new Schema({
     tenkhachhang: { type: String},
     sdt: { type: String },
     diachi: { type: String},
-    goicuoc: { type: String }
+    goicuoc: { type: String },
+    status: {type: Number}
   },{
     timestamps: true,
   });

@@ -73,23 +73,33 @@
                             <div class="row">
                                 {{#each internets}}
                                 <div class="col-sm-4">
-                                    <div class="card bg-info">
+                                    <div class="card" style="border: 1px solid #e5e5e5;">
                                         <div class="card-body ">
-                                            <h5 class="card-title" style="color: #FF0099;">{{this.name_goicuoc}}</h5>
+                                            <h1 class="card-title"
+                                                style="color: #728092;font-size:25px;font-weight: bold;text-align: center;width: 100%;">
+                                                {{this.name_goicuoc}}</h1>
                                             <br>
                                             <hr>
-                                            <p style="color: #33FFFF;">Băng thông</p>
-                                            <p style="color: red;">Trong nước : {{this.data_tn}}</p>
-                                            <p style="color: red;">Quốc tế : {{this.data_qt}}</p>
-                                            <p href="#" data-toggle="tooltip" data-placement="top"
-                                                title="{{this.promotions}}" style="color: #33FFFF;">Chi tiết khuyến mãi
-                                            </p>
-                                            <p class="price">{{this.price}}(VNĐ)/1 Tháng</p>
+                                            <p class="price" style="color:#EE0033;font-faimily:  roboto;">{{this.price}}(VNĐ)/1 Tháng</p>
+                                            <hr>
+                                            <p style="color: #252525;font-weight: bold;">Băng thông</p>
+                                            <p style="color: #252525;">Trong nước : {{this.data_tn}}</p>
+                                            <p style="color: #252525;">Quốc tế : {{this.data_qt}}</p>
+                                            <p style="color: #252525;font-weight: bold;">Khuyến mãi</p>
+                                            <p>{{this.promotions}}</p>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#internet"  style="width: 100%;">
+                                                        Đăng ký
+                                                    </button>
+                                                </div>
+                                                
 
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#internet">
-                                                Đăng ký
-                                            </button>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>

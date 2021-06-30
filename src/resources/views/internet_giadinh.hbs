@@ -72,23 +72,33 @@
                             <div class="row">
                                 {{#each ifamily}}
                                 <div class="col-sm-4">
-                                    <div class="card bg-info">
-                                        <div class="card-body">
-                                            <h5 class="card-title" style="color: #00AA00;">{{this.name_gcgd}}</h5>
-                                            <br>
+                                    <div class="card" style="border: 1px solid #e5e5e5;">
+                                        <div class="card-body ">
+                                            <h1 class="card-title"
+                                                style="color: #728092;font-size:25px;font-weight: bold;text-align: center;width: 100%;">
+                                                {{this.name_gcgd}}</h1>
+                                            <br><br>
                                             <hr>
-                                            <p style="color: #33FFFF;">Băng thông</p>
-                                            <p style="color: red;">{{this.data_gd}}</p>
+                                            <p class="price" style="color:#EE0033;font-faimily:  roboto;">{{this.price_gd}}(VNĐ)/1 Tháng</p>
+                                            <hr>
+                                            <p style="color: #252525;font-weight: bold;">Băng thông</p>
+                                            <p style="color: #252525;"> {{this.data_gd}}</p>
+                                            
+                                            <p style="color: #252525;font-weight: bold;">Khuyến mãi</p>
+                                            <p>{{this.promotions_gd}}</p>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#family"  style="width: 100%;">
+                                                        Đăng ký
+                                                    </button>
+                                                </div>
+                                                
 
-                                            <p href="#" data-toggle="tooltip" data-placement="top"
-                                                title="{{this.promotions_gd}}" style="color: #33FFFF;">Chi tiết khuyến
-                                                mãi</p>
-                                            <p class="price">{{this.price_gd}}(VNĐ)/1 Tháng</p>
+                                            </div>
 
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#family">
-                                                Đăng ký
-                                            </button>
+
                                         </div>
                                     </div>
                                 </div>

@@ -8,7 +8,7 @@
                 </div>
                 <br>
                 <div>
-                    <p style="text-align: center;font-style: italic;">CÁC GÓI CƯỚC DOANH NGHIỆP VỪA VÀ LỚN</p>
+                    <p style="text-align: center;font-weight: 700;">CÁC GÓI CƯỚC DOANH NGHIỆP VỪA VÀ LỚN</p>
                 </div>
                 <hr>
                 <div class="container">
@@ -69,23 +69,33 @@
                             <div class="row">
                                 {{#each internets}}
                                 <div class="col-sm-4">
-                                    <div class="card bg-info">
+                                    <div class="card" style="border: 1px solid #e5e5e5;">
                                         <div class="card-body ">
-                                            <h5 class="card-title" style="color: #FF0099;">{{this.name_goicuoc}}</h5>
+                                            <h1 class="card-title"
+                                                style="color: #728092;font-size:25px;font-weight: bold;text-align: center;width: 100%;">
+                                                {{this.name_goicuoc}}</h1>
                                             <br>
                                             <hr>
-                                            <p style="color: #33FFFF;">Băng thông</p>
-                                            <p style="color: red;">Trong nước : {{this.data_tn}}</p>
-                                            <p style="color: red;">Quốc tế : {{this.data_qt}}</p>
-                                            <p href="#" data-toggle="tooltip" data-placement="top"
-                                                title="{{this.promotions}}" style="color: #33FFFF;">Chi tiết khuyến mãi
-                                            </p>
-                                            <p class="price">{{this.price}}(VNĐ)/1 Tháng</p>
+                                            <p class="price" style="color:#EE0033;font-faimily:  roboto;">{{this.price}}(VNĐ)/1 Tháng</p>
+                                            <hr>
+                                            <p style="color: #252525;font-weight: bold;">Băng thông</p>
+                                            <p style="color: #252525;">Trong nước : {{this.data_tn}}</p>
+                                            <p style="color: #252525;">Quốc tế : {{this.data_qt}}</p>
+                                            <p style="color: #252525;font-weight: bold;">Khuyến mãi</p>
+                                            <p>{{this.promotions}}</p>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#internet"  style="width: 100%;">
+                                                        Đăng ký
+                                                    </button>
+                                                </div>
+                                                
 
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#internet">
-                                                Đăng ký
-                                            </button>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +111,7 @@
                     </div>
                 </div>
                 <div>
-                    <p style="text-align: center;font-style: italic;">CÁC GÓI CƯỚC GIA ĐÌNH</p>
+                    <p style="text-align: center;font-weight: 700;">CÁC GÓI CƯỚC GIA ĐÌNH</p>
                 </div>
                 <hr>
                 <div class="container">
@@ -162,26 +172,37 @@
                             <div class="row">
                                 {{#each familys}}
                                 <div class="col-sm-4">
-                                    <div class="card bg-info">
-                                        <div class="card-body">
-                                            <h5 class="card-title" style="color: #00AA00;">{{this.name_gcgd}}</h5>
-                                            <br>
+                                    <div class="card" style="border: 1px solid #e5e5e5;">
+                                        <div class="card-body ">
+                                            <h1 class="card-title"
+                                                style="color: #728092;font-size:25px;font-weight: bold;text-align: center;width: 100%;">
+                                                {{this.name_gcgd}}</h1>
+                                            <br><br>
                                             <hr>
-                                            <p style="color: #33FFFF;">Băng thông</p>
-                                            <p style="color: red;">{{this.data_gd}}</p>
+                                            <p class="price" style="color:#EE0033;font-faimily:  roboto;">{{this.price_gd}}(VNĐ)/1 Tháng</p>
+                                            <hr>
+                                            <p style="color: #252525;font-weight: bold;">Băng thông</p>
+                                            <p style="color: #252525;"> {{this.data_gd}}</p>
+                                            
+                                            <p style="color: #252525;font-weight: bold;">Khuyến mãi</p>
+                                            <p>{{this.promotions_gd}}</p>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#family"  style="width: 100%;">
+                                                        Đăng ký
+                                                    </button>
+                                                </div>
+                                                
 
-                                            <p href="#" data-toggle="tooltip" data-placement="top"
-                                                title="{{this.promotions_gd}}" style="color: #33FFFF;">Chi tiết khuyến
-                                                mãi</p>
-                                            <p class="price">{{this.price_gd}}(VNĐ)/1 Tháng</p>
+                                            </div>
 
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#family">
-                                                Đăng ký
-                                            </button>
+
                                         </div>
                                     </div>
                                 </div>
+                                
                                 {{/each}}
                             </div>
 
@@ -197,7 +218,7 @@
                     </div>
                 </div>
                 <div>
-                    <p style="text-align: center; font-style: italic;">CÁC GÓI CƯỚC COMBO INTERNET</p>
+                    <p style="text-align: center;font-weight: 700;">CÁC GÓI CƯỚC COMBO INTERNET</p>
                 </div>
                 <hr>
                 <div class="container">
@@ -258,27 +279,38 @@
                             <div class="row">
                                 {{#each combos}}
                                 <div class="col-sm-4">
-                                    <div class="card bg-info">
-                                        <div class="card-body">
-                                            <h5 class="card-title" style="color: #FF9900;">{{this.name_combo}}</h5>
-                                            <br>
+                                    <div class="card" style="border: 1px solid #e5e5e5;">
+                                        <div class="card-body ">
+                                            <h1 class="card-title"
+                                                style="color: #728092;font-size:25px;font-weight: bold;text-align: center;width: 100%;">
+                                                {{this.name_combo}}</h1>
+                                            <br><br>
                                             <hr>
-                                            <p style="color: #33FFFF;">Băng thông</p>
-                                            <p style="color: red;">{{this.data_combo}}</p>
-                                            <p style="color: red;">Phạm vi áp dụng</p>
+                                            <p class="price" style="color:#EE0033;font-faimily:  roboto;">{{this.price_combo}}(VNĐ)/1 Tháng</p>
+                                            <hr>
+                                            <p style="color: #252525;font-weight: bold;">Băng thông</p>
+                                            <p style="color: #252525;">{{this.data_combo}}</p>
+                                            <p style="color: #252525;font-weight: bold;">Phạm vi áp dụng</p>
                                             <p>{{this.range}}</p>
-                                            <p href="#" data-toggle="tooltip" data-placement="top"
-                                                title="{{this.promotions_combo}}" style="color: #33FFFF;">Chi tiết
-                                                khuyến mãi</p>
-                                            <p class="price">{{this.price_combo}}(VNĐ)/1 Tháng</p>
+                                            <p style="color: #252525;font-weight: bold;">Khuyến mãi</p>
+                                            <p>{{this.promotions_combo}}</p>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#combos"  style="width: 100%;">
+                                                        Đăng ký
+                                                    </button>
+                                                </div>
+                                                
 
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#combos">
-                                                Đăng ký
-                                            </button>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>
+                                
                                 {{/each}}
                             </div>
 
@@ -292,9 +324,10 @@
                 <div class="container">
                     <h1 class="test-2">Khuyến mãi</h1>
                     <p style="color: #00AA00;">Khuyến mãi thêm khi quý khách đóng cước trước:</p>
-                     {{#each promotions}}
-                    <ul ><p style="color: #FF9900;">Khi khách hàng đóng cước trước {{this.month}}</p>
-                        
+                    {{#each promotions}}
+                    <ul>
+                        <p style="color: #FF9900;">Khi khách hàng đóng cước trước {{this.month}}</p>
+
                         <li style="margin-left:5%;">{{this.infor}}</li>
                     </ul>
                     {{/each}}
@@ -303,58 +336,63 @@
             {{!-- =========tin tuc======== --}}
             {{!-- col-8 --}}
             <div class="col-sm-4 backgroud-2">
-                <div class="titletintuc "><h1 class="test">TIN TỨC SỰ KIỆN</h1></div><br><br><br>
+                <div class="titletintuc ">
+                    <h1 class="test">TIN TỨC SỰ KIỆN</h1>
+                </div><br><br><br>
                 <div class="tintuc">
                     <img src="img/lienhe.png" alt="" style="width:100%;border-radius: 10px 10px 0 0;">
-                    <p style="text-align: center;color:red;">LIÊN HỆ TƯ VẤN / LẮP ĐẶT</p>
+                    <p style="text-align: center;color:red;font-weight: 600;">LIÊN HỆ TƯ VẤN / LẮP ĐẶT</p>
                     <p style="text-align: center;">034.561.7864</p>
                     <p style="text-align: center;color:green;">Báo hỏng / Sự cố</p>
                     <p style="text-align: center;">1800 8090</p>
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">SMART MOTOR VIETTEL</p>
-                    <img src="img/chong-trom-xe-may-viettel-remote-w2.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+                    <p style="text-align: center;color:red;font-weight: 600;">SMART MOTOR VIETTEL</p>
+                    <img src="img/chong-trom-xe-may-viettel-remote-w2.jpg" alt=""
+                        style="width:100%;border-radius: 0 0 10px 10px;">
+
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">THIẾT BỊ GIÁM SÁT HÀNH TRÌNH</p>
-                    <img src="img/Bảng-giá-lắp-đặt-thiết-bị-giám-sát-hành-viettel-1.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+                    <p style="text-align: center;color:red;font-weight: 600;">THIẾT BỊ GIÁM SÁT HÀNH TRÌNH</p>
+                    <img src="img/Bảng-giá-lắp-đặt-thiết-bị-giám-sát-hành-viettel-1.jpg" alt=""
+                        style="width:100%;border-radius: 0 0 10px 10px;">
+
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">KHÓA CHỐNG TRỘM XE MÁY</p>
+                    <p style="text-align: center;color:red;font-weight: 600;">KHÓA CHỐNG TRỘM XE MÁY</p>
                     <img src="img/chong-trom-xe-may-remote.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">CHỮ KÝ SỐ VIETTEL</p>
+                    <p style="text-align: center;color:red;font-weight: 600;">CHỮ KÝ SỐ VIETTEL</p>
                     <img src="img/chu-ky-so-viettel-ca.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">HÓA ĐƠN ĐIỆN TỬ VIETTEL</p>
+                    <p style="text-align: center;color:red;font-weight: 600;">HÓA ĐƠN ĐIỆN TỬ VIETTEL</p>
                     <img src="img/hoa-don-dien-tu.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">LẮP ĐẶT CÁP QUANG VIETTEL</p>
-                    <img src="img/lap-dat-internet-quan-9-10-1.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+                    <p style="text-align: center;color:red;font-weight: 600;">LẮP ĐẶT CÁP QUANG VIETTEL</p>
+                    <img src="img/lap-dat-internet-quan-9-10-1.jpg" alt=""
+                        style="width:100%;border-radius: 0 0 10px 10px;">
+
                 </div><br>
                 <div class="tintuc">
-                    <p style="text-align: center;color:red;">ĐỊNH VỊ Ô TÔ VIETTEL</p>
+                    <p style="text-align: center;color:red;font-weight: 600;">ĐỊNH VỊ Ô TÔ VIETTEL</p>
                     <img src="img/dinh-vi-o-to.jpg" alt="" style="width:100%;border-radius: 0 0 10px 10px;">
-                    
+
                 </div><br>
-                
-                
+
+
             </div>
         </div>
 
-    
+
     </div>
     <div class="footer-relative">{{> footer}}</div>
-    
 
-    
+
+
 </div>

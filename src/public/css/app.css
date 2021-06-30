@@ -14,6 +14,7 @@
   border-radius: 10px; }
 .menu{
   height: auto;
+  
 }
 
 .carousel-inner-banner-height {
@@ -123,7 +124,7 @@
 }
 .backgroud-row{
   position: relative;
-  background-color: white;
+  background-color: #ffffff;
   height: auto;
 }
 .backgroud-1{
@@ -141,7 +142,7 @@
   height: auto;
   margin: 0 auto;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid #e9e9e9;
 }
 .titletintuc{
   position: relative;
@@ -172,7 +173,7 @@
   100% { color: #F8CD0A;  } 
 } 
 .test {
-        background-color: black;
+        background-color: #FF0000;
         font-size:24px;
         font-weight:bold;
   -webkit-animation: my 1200ms infinite;
@@ -189,4 +190,8 @@
 -moz-animation: my 1200ms infinite; 
 -o-animation: my 1200ms infinite; 
 animation: my 1200ms infinite;
+}
+/* ===== */
+.card-title{
+  margin-left: 10%;
 }

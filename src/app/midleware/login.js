@@ -1,18 +1,18 @@
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 
-const verifyToken = (req,res,next) =>{
-    const authHeader = req.header('Authorization');
-    const token = authHeader && authHeader.plit(' ')[1];
+// const verifyToken = (req,res,next) =>{
+//     const token = localStorage.getItem('token');
+//     console.log(token);
 
-    if (!token) return res.sendStatus(401)
-        try {
-          const decode =  jwt.verify(token, 'bimat')
+//     // if (!token) return res.sendStatus(401)
+//     //     try {
+//     //       const decode =  jwt.verify(token, 'bimat')
           
-        } catch (error) {
+//     //     } catch (error) {
             
-            return res.sendStatus(403)
-        }
+//     //         return res.sendStatus(403)
+//     //     }
     
 
-}
-module.exports = verifyToken;
+// }
+// module.exports = verifyToken;

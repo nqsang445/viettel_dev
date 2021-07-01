@@ -14,13 +14,14 @@ class SiteControllers {
     index(req, res, next) {
 
 
-        Promise.all([Internet.find({}),Family.find({}),Combo.find({}),Promotion.find({})])
-            .then(([internets,familys,combos,promotions]) =>{
+        Promise.all([Internet.find({}),Family.find({}),Combo.find({}),Promotion.find({}),Phones.find({})])
+            .then(([internets,familys,combos,promotions,phones]) =>{
                 res.render('home', {
                     internets: multipleMongooseToObject(internets.slice(-6)),
                     familys: multipleMongooseToObject(familys.slice(-6)),
                     combos: multipleMongooseToObject(combos.slice(-6)),
-                    promotions: multipleMongooseToObject(promotions)
+                    promotions: multipleMongooseToObject(promotions),
+                    phones: multipleMongooseToObject(phones)
                 });
             })
             .catch(err=>{

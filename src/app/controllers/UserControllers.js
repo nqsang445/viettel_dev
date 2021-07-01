@@ -37,9 +37,7 @@ class UserControllers {
                         token: token
                     })
                 } else {
-                    res.render('dangnhap', {
-                        err: err
-                    })
+                    res.send('Tài khoản hoặc mật khẩu không chính xác');
                 }
             })
             .catch(err => {
@@ -49,6 +47,7 @@ class UserControllers {
 
     }
     danhsach_dk(req, res, next) {
+        
         Create.find({})
             .then(shows_information => {
                 res.render('danhsach_dk', {

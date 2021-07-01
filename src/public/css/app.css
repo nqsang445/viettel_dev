@@ -219,9 +219,10 @@ animation: my 1200ms infinite;
 }
 .ad2{
   list-style: none;
-
+  margin-left: -25%;
 }
 .ad3{
+  position: relative;
   width: 100%;
   height: 1200px;
 }

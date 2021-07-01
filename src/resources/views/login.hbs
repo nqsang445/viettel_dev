@@ -1,8 +1,8 @@
 <script>
-  localStorage.setItem('token', '{{token}}');
-  var temp = localStorage.getItem('token');
+  sessionStorage.setItem('token', '{{token}}');
+  var temp = sessionStorage.getItem('token');
   function handleLogout(){
-    localStorage.clear();
+    sessionStorage.clear();
   }
 </script>
 <div class="container bg-admin">
@@ -23,14 +23,16 @@
   </div>
 <br><hr>
   <div class="row">
-    <div class="col-sm-2 bg-right">
+    <div class="col-sm-2 bg-right bg-dark">
       <h3 style="text-align:center;">MENU</h3>
       <ul class="ad2">
-        <li><a href="/danhsach_dk" target="ifarm_admin">Danh sách đăng ký</a></li><br>
-        <li><a href="/goicuocdoanhnghiep" target="ifarm_admin">Gói cước doanh nghiệp</a></li><br>
-        <li><a href="/goicuocgiadinh" target="ifarm_admin">Gói cước gia đình</a></li><br>
-        <li><a href="/combo" target="ifarm_admin">COMBO gói cước</a></li><br>
-        <li><a href="/promotion" target="ifarm_admin">Khuyến mãi</a></li>
+       
+        <li class="nav-item"><a href="/danhsach_dk" target="ifarm_admin" class="nav-link">Danh sách đăng ký</a></li><br>
+        <li class="nav-item"><a href="/goicuocdoanhnghiep" target="ifarm_admin" class="nav-link">Gói cước doanh nghiệp</a></li><br>
+        <li class="nav-item"><a href="/goicuocgiadinh" target="ifarm_admin" class="nav-link">Gói cước gia đình</a></li><br>
+        <li class="nav-item"><a href="/combo" target="ifarm_admin" class="nav-link">COMBO gói cước</a></li><br>
+        <li class="nav-item"><a href="/promotion" target="ifarm_admin" class="nav-link">Khuyến mãi</a></li>
+        <li class="nav-item"><a href="/phone" target="ifarm_admin" class="nav-link">Chỉnh sửa Số điện thoại</a></li>
       </ul>
     </div>
     <div class="col-sm-10 bg-left">

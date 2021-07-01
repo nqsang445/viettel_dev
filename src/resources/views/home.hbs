@@ -10,6 +10,7 @@
                 <div>
                     <p style="text-align: center;font-weight: 700;">CÁC GÓI CƯỚC DOANH NGHIỆP VỪA VÀ LỚN</p>
                 </div>
+                
                 <hr>
                 <div class="container">
                     <!-- The Modal -->
@@ -337,7 +338,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <h1 class="test-2">Khuyến mãi</h1>
+                    <h1 class="test-2">Khuyến mãi</h1><br>
                     <p style="color: #00AA00;">Khuyến mãi thêm khi quý khách đóng cước trước:</p>
                     {{#each promotions}}
                     <ul>
@@ -357,7 +358,9 @@
                 <div class="tintuc">
                     <img src="img/lienhe.png" alt="" style="width:100%;border-radius: 10px 10px 0 0;">
                     <p style="text-align: center;color:red;font-weight: 600;">LIÊN HỆ TƯ VẤN / LẮP ĐẶT</p>
-                    <p style="text-align: center;">034.561.7864</p>
+                    {{#each phones}}
+                    <p style="text-align: center;">{{this.sdt}}</p>
+                    {{/each}}
                     <p style="text-align: center;color:green;">Báo hỏng / Sự cố</p>
                     <p style="text-align: center;">1800 8090</p>
                 </div><br>

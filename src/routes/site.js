@@ -3,7 +3,7 @@ var router = express.Router();
 const jwt = require('jsonwebtoken');
 const siteControllers = require('../app/controllers/SiteControllers');
 const userControllers = require('../app/controllers/UserControllers');
-const verifyToken = require('../app/midleware/login');
+
 
 // userControllers
 

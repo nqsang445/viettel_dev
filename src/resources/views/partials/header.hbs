@@ -36,25 +36,28 @@
                 </li> --}}
 
             </ul>
-
-            <a class="nav-link" href="#" style="float: right;">HOTLINE: 0345617864</a>
-
+                {{#each phones}}
+            <a class="nav-link" href="#" style="float: right;">HOTLINE: {{this.sdt}}</a>
+                {{/each }}
         </div>
         
     </nav>
 
 </div>
+{{#each phones}}
+                
+                
 
-
-<a href="tel:+84345617864">
+<a href="tel:+{{this.sdt}}">
         <div class="hotline">
             <span class="before-hotline"><img src="img/phone.png" alt="HOTLINE" style="width: 50px;height: 50px;">:</span> 
-            <span class="hotline-number">034.561.7864</span>
+            <span class="hotline-number">{{this.sdt}}</span>
         </div>
     </a>
     <div class="mobile-hotline">
         <div class="mobile-hotline-left">
-            <a href="https://zalo.me/0345617864" target="blank">Chat zalo</a>
+            <a href="https://zalo.me/{{this.sdt}}" target="blank">Chat zalo</a>
         </div>
-        <div class="mobile-hotline-right"><a href="tel:+84345617864" target="blank">Gọi điện ngay</a></div>
+        <div class="mobile-hotline-right"><a href="tel:+{{this.sdt}}" target="blank">Gọi điện ngay</a></div>
     </div>
+{{/each }}

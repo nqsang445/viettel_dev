@@ -78,10 +78,7 @@
     <!-- Section: Text -->
     <section class="mb-4">
       <p>
-        WEBSITE MUA SẮM ONLINE CHÍNH THỨC CỦA VIETTEL.
-        Cơ quan chủ quản: Tổng Công ty Viễn thông Viettel (Viettel Telecom) - Chi nhánh Tập đoàn Công nghiệp - Viễn thông Quân đội.
-        Mã số doanh nghiệp: 0100109106-011 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp lần đầu ngày 18/07/2005, sửa đổi lần thứ 15 ngày 18/12/2018.
-        Chịu trách nhiệm nội dung: Ông Cao Anh Sơn
+        TẬP ĐOÀN VIỄN THÔNG QUÂN ĐỘI-CHI NHÁNH VIETTEL CẦN THƠ.
       </p>
     </section>
     <!-- Section: Text -->
@@ -156,18 +153,42 @@
           <h5 class="text-uppercase">Dịch vụ di động</h5>
 
           <ul class="list-unstyled mb-0">
-            {{!-- <li>
-              <a href="#!" class="text-dark">Link 1</a>
+            <li>
+              <a href="#!" class="text-dark">Gói cước data</a>
             </li>
             <li>
-              <a href="#!" class="text-dark">Link 2</a>
+              <a href="#!" class="text-dark">Mua sim số</a>
             </li>
             <li>
-              <a href="#!" class="text-dark">Link 3</a>
+              <a href="#!" class="text-dark">Gói cước chính</a>
             </li>
             <li>
-              <a href="#!" class="text-dark">Link 4</a>
-            </li> --}}
+              <a href="#!" class="text-dark">Dịch vụ quốc tế</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Chuyển sang trả sau</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Ứng dụng số</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-dark">My Viettel</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">5Dmax</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Onme</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">MyClip</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Chuyển sang trả sau</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -180,10 +201,26 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    <p style="color: black;">Trụ sở: Số 1 Giang Văn Minh, P Kim Mã, Q Ba Đình. |
-    Chăm sóc khách hàng: 1800 8098/198 (miễn phí).</p>
-    
+    <p style="color: #252525;">Địa chỉ:   210 Trần Phú, Cái Khế, Ninh Kiều, Cần Thơ </p>
+    {{#each phones}}
+    <p style="color: #EE0033;" id="phone_footer">{{this.sdt}}</p>
+    {{/each }}
+    <p style="color: #252525;">Các Tỉnh, Quận Huyện, Có Nhu Cầu Đặt Số Vui lòng Liên Hệ HOTLINE</p>
   </div>
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+<script>
+    function formatPhoneNumber3(phoneNumberString) {
+        var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+        var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+        if (match) {
+            return 'HOTLINE: ' + match[1] + ' ' + match[2] + ' ' + match[3]
+        }
+        return null
+    }
+    
+    var phone_footer = document.getElementById('phone_footer').innerText;
+    document.getElementById('phone_footer').innerText = formatPhoneNumber3(phone_footer);
+    
+</script>

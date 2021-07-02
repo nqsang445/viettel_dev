@@ -48,12 +48,10 @@ class UserControllers {
     }
     danhsach_dk(req, res, next) {
         
-        Create.find({})
+        Create.find({}).sort({'_id': -1})
             .then(shows_information => {
                 res.render('danhsach_dk', {
                     shows_information: multipleMongooseToObject(shows_information),
-
-
                 });
             })
             .catch(err => {
@@ -361,12 +359,12 @@ class UserControllers {
             if (findData.password === passold) {
                 findData.password = passnew;
                await userModel.updateOne({ _id: findData._id }, { $set: findData })
-               res.send('thanh cong');
+               res.send('Đổi mật khẩu thành công');
             } else {
-                res.status(404).json('that bai')
+                res.status(404).json('Đổi mật khẩu thất bại')
             }
         } catch (error) {
-            res.send(error);
+            res.send('Đổi mật khẩu thất bại');
         }
 
     }

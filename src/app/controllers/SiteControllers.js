@@ -34,44 +34,50 @@ class SiteControllers {
         const add = new Create(req.body);
         add.save({})
             .then(temp => {
-                res.json('Đăng ký thành công')
+                res.send('Đăng ký thành công')
             })
             .catch(err=>{
                 res.status(500).json('Lỗi Server')
             });
     }
     internet(req, res, next) {
-        Internet.find({})
-            .then(internets => {
+        Promise.all([Internet.find({}),Phones.find({})])
+            .then(([internets,phones]) =>{
                 res.render('internet', {
-                    internets: multipleMongooseToObject(internets)
+                    internets: multipleMongooseToObject(internets),
+                    phones: multipleMongooseToObject(phones)
                 });
             })
             .catch(err=>{
                 res.status(500).json('Lỗi Server')
             });
+        
     }
     internet_combo(req, res, next) {
-        Combo.find({})
-            .then(icombo => {
+        Promise.all([Combo.find({}),Phones.find({})])
+            .then(([icombo,phones]) =>{
                 res.render('internet_combo', {
-                    icombo: multipleMongooseToObject(icombo)
+                    icombo: multipleMongooseToObject(icombo),
+                    phones: multipleMongooseToObject(phones)
                 });
             })
             .catch(err=>{
                 res.status(500).json('Lỗi Server')
             });
+        
     }
     internet_giadinh(req, res, next) {
-        Family.find({})
-            .then(ifamily => {
+        Promise.all([Family.find({}),Phones.find({})])
+            .then(([ifamily,phones]) =>{
                 res.render('internet_giadinh', {
-                    ifamily: multipleMongooseToObject(ifamily)
+                    ifamily: multipleMongooseToObject(ifamily),
+                    phones: multipleMongooseToObject(phones)
                 });
             })
             .catch(err=>{
                 res.status(500).json('Lỗi Server')
             });
+        
     }
     
     

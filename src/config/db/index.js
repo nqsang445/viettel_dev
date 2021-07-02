@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 async function connect() {
     try {
-        await mongoose.connect('mongodb+srv://viettel_web_dev:0345617864@cluster0.uovjr.mongodb.net/viettel_web_dev?retryWrites=true&w=majority', {
+        await mongoose.connect('mongodb://localhost:27017/viettel_web_dev', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
@@ -15,5 +15,5 @@ async function connect() {
     }
 }
 // mongodb+srv://viettel_web_dev:0345617864@cluster0.uovjr.mongodb.net/viettel_web_dev?retryWrites=true&w=majority
-// neu dua len heroku
+// neu dua web len heroku
 module.exports = { connect };

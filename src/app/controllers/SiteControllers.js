@@ -32,7 +32,7 @@ class SiteControllers {
     }
     store(req, res, next) {
         const time = new Date();
-        const getTime = `${time.getDate()}-${time.getMonth()}-${time.getFullYear()}`;
+        const getTime = `${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
          const add = (req.body);
         add.thoigian = getTime;
         Create.insertMany(add)

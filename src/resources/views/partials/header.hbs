@@ -1,7 +1,7 @@
 <div class="menu">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
-        <a class="nav-link" href="/" ><img src="img/logovt_vtedit.png" alt="VIETTEL"
-                style="width: auto;height:auto;"> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/"><img src="img/logovt_vtedit.png" alt="VIETTEL" style="width: auto;height:auto;">
+            <span class="sr-only">(current)</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,26 +36,46 @@
                 </li> --}}
 
             </ul>
-                {{#each phones}}
-            <a class="nav-link" href="#" style="float: right;">HOTLINE: {{this.sdt}}</a>
-                {{/each }}
+            {{#each phones}}
+            <a class="nav-link" href="#" style="float: right; color: #EE0033" id="phone_header">HOTLINE: {{this.sdt}}</a>
+            {{/each }}
         </div>
-        
     </nav>
-
 </div>
 
 {{#each phones}}
-<a href="tel:+{{this.sdt}}">
-        <div class="hotline">
-            <span class="before-hotline"><img src="img/phone.png" alt="HOTLINE" style="width: 50px;height: 50px;">:</span> 
-            <span class="hotline-number">{{this.sdt}}</span>
-        </div>
-    </a>
-    <div class="mobile-hotline">
-        <div class="mobile-hotline-left">
-            <a href="https://zalo.me/{{this.sdt}}" target="blank">Chat zalo</a>
-        </div>
-        <div class="mobile-hotline-right"><a href="tel:+{{this.sdt}}" target="blank">Gọi điện ngay</a></div>
+<a href="tel:{{this.sdt}}">
+    <div class="hotline">
+        <span class="before-hotline"><img src="img/phone.png" alt="HOTLINE" style="width: 50px;height: 50px;">:</span>
+        <span class="hotline-number" id="phones">{{this.sdt}}</span>
     </div>
+</a>
+<div class="mobile-hotline">
+    <div class="mobile-hotline-left">
+        <a href="https://zalo.me/{{this.sdt}}" target="blank">Chat zalo</a>
+    </div>
+    <div class="mobile-hotline-right"><a href="tel:{{this.sdt}}" target="blank">Gọi điện ngay</a></div>
+</div>
 {{/each }}
+<script>
+    function formatPhoneNumber(phoneNumberString) {
+        var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+        var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+        if (match) {
+            return ' ' + match[1] + ' ' + match[2] + ' ' + match[3]
+        }
+        return null
+    }
+    function formatPhoneNumber2(phoneNumberString) {
+        var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+        var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+        if (match) {
+            return 'HOTLINE: ' + match[1] + ' ' + match[2] + ' ' + match[3]
+        }
+        return null
+    }
+    var phones = document.getElementById('phones').innerText;
+    document.getElementById('phones').innerText = formatPhoneNumber(phones);
+    var phone_header = document.getElementById('phone_header').innerText;
+    document.getElementById('phone_header').innerText = formatPhoneNumber2(phone_header);
+</script>

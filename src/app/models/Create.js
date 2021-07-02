@@ -6,9 +6,10 @@ const Create = new Schema({
     sdt: { type: String },
     diachi: { type: String},
     goicuoc: { type: String },
-    status: {type: Number}
+    status: {type: Number},
+    thoigian: {type: String},
   },{
-    timestamps: true,
+    collection : 'information'
   });
 
 module.exports = mongoose.model('information',Create);

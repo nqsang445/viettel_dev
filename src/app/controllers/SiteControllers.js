@@ -31,14 +31,24 @@ class SiteControllers {
         
     }
     store(req, res, next) {
-        const add = new Create(req.body);
-        add.save({})
-            .then(temp => {
-                res.send('Đăng ký thành công')
-            })
-            .catch(err=>{
-                res.status(500).json('Lỗi Server')
-            });
+        const time = new Date();
+        const getTime = `${time.getDate()}-${time.getMonth()}-${time.getFullYear()}`;
+         const add = (req.body);
+        add.thoigian = getTime;
+        Create.insertMany(add)
+        .then(temp => {
+            res.send('Đăng ký thành công')
+        })
+        .catch(err=>{
+            res.status(500).json('Lỗi Server')
+        });
+        // Create.({})
+            // .then(temp => {
+            //     res.send('Đăng ký thành công')
+            // })
+            // .catch(err=>{
+            //     res.status(500).json('Lỗi Server')
+            // });
     }
     internet(req, res, next) {
         Promise.all([Internet.find({}),Phones.find({})])

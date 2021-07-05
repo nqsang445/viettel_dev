@@ -379,6 +379,13 @@ class UserControllers {
                 res.status(500).json('Lỗi Server')
             });
     }
+    xuly(req,res,next){
+        Create.updateOne({ _id: req.params.id }, {status: 1})
+            .then(() => res.redirect('/danhsach_dk'))
+            .catch(err => {
+                res.status(500).json('Lỗi Server')
+            });
+    }
 }
 
 module.exports = new UserControllers;

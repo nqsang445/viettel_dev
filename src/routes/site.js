@@ -6,6 +6,7 @@ const userControllers = require('../app/controllers/UserControllers');
 
 
 // userControllers
+router.put('/:id/xuly',userControllers.xuly);
 
 router.get('/danhsach_dk',userControllers.danhsach_dk);
 

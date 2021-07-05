@@ -36,8 +36,16 @@
                       <td>{{this.diachi}}</td>
                       <td>{{this.goicuoc}}</td>
                       <td>{{this.thoigian}}</td>
-                      {{!-- <td><button type="button" class="btn btn-primary" id="check" data-id="{{this._id}}"
-                          onclick="check_xuly()">Chưa xử lý</button></td> --}}
+                      <td>
+                      <form action="/{{this._id}}/xuly?_method=PUT" method="POST">
+                            {{#if this.status}}
+                            <input type="submit" value="Đã xử lý" id="xulykh" style="background-color: lightblue;">
+                            
+                            {{else}}
+                            <input type="submit" value="Chưa xử lý" id="xulykh" style="background-color: lightblue;">
+                            {{/if}}
+                      </form>
+                      </td>
                       <td><a class="btn btn-danger" href="#" role="button" data-toggle="modal" data-id="{{this._id}}"
                           data-target="#delete_dsdk">Xóa</a></td>
                     </tr>

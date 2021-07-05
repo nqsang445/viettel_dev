@@ -19,8 +19,6 @@ class UserControllers {
     dangnhap(req, res, next) {
         res.render('page_admin_viettel');
     }
-
-    // [GET] /admin
     login(req, res, next) {
 
         const userLogin = req.body.user;

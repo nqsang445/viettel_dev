@@ -8,6 +8,8 @@ const userControllers = require('../app/controllers/UserControllers');
 // userControllers
 
 router.get('/danhsach_dk',userControllers.danhsach_dk);
+
+
 ///LOGIN
 router.get('/login', userControllers.dangnhap);
 router.post('/login', userControllers.login);

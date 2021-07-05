@@ -366,6 +366,19 @@ class UserControllers {
         }
 
     }
+    // search
+    search(req,res,next){
+        const search = req.body.Search;
+        Create.find({'sdt': search})
+            .then(shows_information => {
+                res.render('danhsach_dk', {
+                    shows_information: multipleMongooseToObject(shows_information),
+                });
+            })
+            .catch(err => {
+                res.status(500).json('Lỗi Server')
+            });
+    }
 }
 
 module.exports = new UserControllers;

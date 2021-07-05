@@ -9,7 +9,7 @@ const userControllers = require('../app/controllers/UserControllers');
 
 router.get('/danhsach_dk',userControllers.danhsach_dk);
 
-
+router.post('/search',userControllers.search);
 ///LOGIN
 router.get('/login', userControllers.dangnhap);
 router.post('/login', userControllers.login);

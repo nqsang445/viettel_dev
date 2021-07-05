@@ -1,4 +1,3 @@
-
 <div class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     {{> header_admin}}
@@ -12,7 +11,10 @@
             <div class="col-sm-12">
               <div class="mt-4">
                 <h1>Danh sách đăng ký</h1>
-
+                <form class="form-inline my-2 my-lg-0" action="/search" method="POST">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Nhập số điện thoại" aria-label="Search" name="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
                 <table class="table mt-4" style="width: 100%;">
                   <thead>
                     <tr>

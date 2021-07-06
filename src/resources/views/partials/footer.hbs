@@ -1,4 +1,3 @@
-
 <!-- Footer -->
 <footer class=" text-center text-white " style="background-color: #f0f0f0;">
   <!-- Grid container -->
@@ -6,39 +5,29 @@
     <!-- Section: Social media -->
     <section class="mb-4">
       <!-- Facebook -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f "></i
-      ></a>
+      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f "></i></a>
       {{!-- <img src="img/facebook.png" alt="" class="footer-icon"> --}}
 
       <!-- Twitter -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
+      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
       {{!-- <img src="img/twitter.png" alt="" class="footer-icon"> --}}
       <!-- Google -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
+      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
       {{!-- <img src="img/google.png" alt="" class="footer-icon"> --}}
       <!-- Instagram -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
+      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
       {{!-- <img src="img/intagram.jpg" alt="" class="footer-icon"> --}}
-      {{!-- <!-- Linkedin -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
+      {{!--
+      <!-- Linkedin -->
+      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
 
       <!-- Github -->
-      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a> --}}
+      <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a> --}}
     </section>
     <!-- Section: Social media -->
 
-    {{!-- <!-- Section: Form -->
+    {{!--
+    <!-- Section: Form -->
     <section class="">
       <form action="">
         <!--Grid row-->
@@ -77,9 +66,9 @@
 
     <!-- Section: Text -->
     <section class="mb-4">
-      <p>
-        TẬP ĐOÀN VIỄN THÔNG QUÂN ĐỘI-CHI NHÁNH VIETTEL CẦN THƠ.
-      </p>
+      <p>Website cung cấp chính sách khuyến mại, thông tin gói cước internet cáp quang Viettel miễn phí toàn quốc.</p>
+      <p>Các chương trình thay đổi liên tục nên hãy liên hệ với tổng đài Viettel chúng tôi để được tư vấn nhanh và chính
+        xác nhất.</p>
     </section>
     <!-- Section: Text -->
 
@@ -90,7 +79,7 @@
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <a class="text-uppercase" href="/"><img src="img/logovt_edit.png" alt="VIETTEL" class="img-boder-radius"></a>
-          
+
 
           {{!-- <ul class="list-unstyled mb-0">
             <li>
@@ -110,7 +99,7 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 " >
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ">
           <h5 class="text-uppercase">Internet Cáp Quang - FTTH</h5>
 
           <ul class="list-unstyled mb-0 ">
@@ -127,7 +116,8 @@
         </div>
         <!--Grid column-->
 
-        {{!-- <!--Grid column-->
+        {{!--
+        <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase">Truyền hình</h5>
 
@@ -201,7 +191,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    <p style="color: #252525;">Địa chỉ:   210 Trần Phú, Cái Khế, Ninh Kiều, Cần Thơ </p>
+    <p style="color: #252525;">Địa chỉ: 210 Trần Phú, Cái Khế, Ninh Kiều, Cần Thơ </p>
     {{#each phones}}
     <p style="color: #EE0033;" id="phone_footer">{{this.sdt}}</p>
     {{/each }}
@@ -211,16 +201,16 @@
 </footer>
 <!-- Footer -->
 <script>
-    function formatPhoneNumber3(phoneNumberString) {
-        var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
-        var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-        if (match) {
-            return 'HOTLINE: ' + match[1] + ' ' + match[2] + ' ' + match[3]
-        }
-        return null
+  function formatPhoneNumber3(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      return 'HOTLINE: ' + match[1] + ' ' + match[2] + ' ' + match[3]
     }
-    
-    var phone_footer = document.getElementById('phone_footer').innerText;
-    document.getElementById('phone_footer').innerText = formatPhoneNumber3(phone_footer);
-    
+    return null
+  }
+
+  var phone_footer = document.getElementById('phone_footer').innerText;
+  document.getElementById('phone_footer').innerText = formatPhoneNumber3(phone_footer);
+
 </script>

@@ -36,8 +36,16 @@ class SiteControllers {
          const add = (req.body);
         add.thoigian = getTime;
         Create.insertMany(add)
-        .then(temp => {
-            res.send('Đăng ký thành công')
+        Promise.all([Internet.find({}),Family.find({}),Combo.find({}),Promotion.find({}),Phones.find({})])
+        .then(([internets,familys,combos,promotions,phones]) =>{
+            res.render('home', {
+                internets: multipleMongooseToObject(internets.slice(-6)),
+                familys: multipleMongooseToObject(familys.slice(-6)),
+                combos: multipleMongooseToObject(combos.slice(-6)),
+                promotions: multipleMongooseToObject(promotions),
+                phones: multipleMongooseToObject(phones),
+                message: 'Đăng ký thành công',
+            });
         })
         .catch(err=>{
             res.status(500).json('Lỗi Server')

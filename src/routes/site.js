@@ -3,18 +3,21 @@ var router = express.Router();
 const jwt = require('jsonwebtoken');
 const siteControllers = require('../app/controllers/SiteControllers');
 const userControllers = require('../app/controllers/UserControllers');
-
+// const requireAuth = require('../app/midleware/login');
 
 // userControllers
-router.put('/:id/xuly',userControllers.xuly);
 
-router.get('/danhsach_dk',userControllers.danhsach_dk);
 
-router.post('/search',userControllers.search);
+
+
+
 ///LOGIN
-router.get('/login', userControllers.dangnhap);
-router.post('/login', userControllers.login);
-
+router.get('/login',  userControllers.login);
+router.post('/login', userControllers.postlogin);
+// phần chưa xử lý trong trang danh sách đăng ký
+router.put('/:id/xuly',userControllers.xuly);
+router.post('/search',userControllers.search);
+router.get('/danhsach_dk',userControllers.danhsach_dk);
 ///update_password
 router.put('/update_password', userControllers.update_password);
 // /password_admin

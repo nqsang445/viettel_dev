@@ -16,10 +16,10 @@ class UserControllers {
     //admin
     
     // page_admin_viettel
-    dangnhap(req, res, next) {
+    login(req, res, next) {
         res.render('page_admin_viettel');
     }
-    login(req, res, next) {
+    postlogin(req, res, next) {
 
         const userLogin = req.body.user;
         const passwordLogin = req.body.password;
@@ -31,19 +31,21 @@ class UserControllers {
             .then(data => {
                 if (data) {
                     var token = jwt.sign({ _id: data._id }, 'mk');
-                    return res.render('login', {
+                    return res.render('admin', {
                         token: token
                     })
                 } else {
-                    res.send('Tài khoản hoặc mật khẩu không chính xác');
+                    res.render('page_admin_viettel',{
+                        error: ' Tài khoản hoặc mật khẩu không chính xác',
+                    })
                 }
             })
             .catch(err => {
                 res.status(500), json('ERROR server')
             });
-
-
     }
+    
+
     danhsach_dk(req, res, next) {
         
         Create.find({}).sort({'_id': -1})

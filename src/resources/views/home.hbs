@@ -1,5 +1,10 @@
 <div class="container backgroud-container">
     {{> header}}
+    {{#if message}}
+    <script>
+        alert('{{message}}');
+    </script>
+    {{/if}}
     <div class="container backgroud-row">
         <div class="row">
             <div class="col-sm-8 backgroud-1">

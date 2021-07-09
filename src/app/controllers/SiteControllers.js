@@ -39,9 +39,9 @@ class SiteControllers {
         Promise.all([Internet.find({}),Family.find({}),Combo.find({}),Promotion.find({}),Phones.find({})])
         .then(([internets,familys,combos,promotions,phones]) =>{
             res.render('home', {
-                internets: multipleMongooseToObject(internets.slice(-6)),
-                familys: multipleMongooseToObject(familys.slice(-6)),
-                combos: multipleMongooseToObject(combos.slice(-6)),
+                internets: multipleMongooseToObject(internets.slice(6)),
+                familys: multipleMongooseToObject(familys.slice(6)),
+                combos: multipleMongooseToObject(combos.slice(6)),
                 promotions: multipleMongooseToObject(promotions),
                 phones: multipleMongooseToObject(phones),
                 message: 'Đăng ký thành công',
